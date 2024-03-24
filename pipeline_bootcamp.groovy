@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DEVELOPER BRANCH 'develop' 
+        // DEVELOPER BRANCH 'develop' 
         BRANCH = "${BRANCH_NAME}"
         ANSIBLE FORCE_COLOR= 'true'
 }
