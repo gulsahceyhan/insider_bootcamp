@@ -27,12 +27,10 @@ stages {
     stage("Automation Precess") {
         steps {
             script {
-                    bat 'pwd'
                 dir('C:/Users/New/OneDrive/Masaüstü/bootcamp/test'){
-                    bat 'pwd'
                     echo 'Automation Process running...'
                     bat 'pip install -r requirements.txt'
-                    bat 'pwd'
+                    sh 'python tester.py'
                 }
             }
         }
