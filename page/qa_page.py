@@ -68,6 +68,9 @@ class QaPage(BasePage):
             print('Lever Application opened.')
         else:
             print("Cound't open")
+    
+    def exit_driver(self):
+        self.driver.quit()
 
     
    

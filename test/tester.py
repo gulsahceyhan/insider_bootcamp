@@ -25,5 +25,6 @@ class TestPom(BaseTest):
         qa.filter()
         qa.suitable_jobs()
         qa.navigate_lever_app()
+        qa.exit_driver()
         
 TestPom()
