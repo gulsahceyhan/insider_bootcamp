@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, 'C:/Users/New/OneDrive/Masaüstü/bootcamp')
+sys.path.insert(0, 'C:/Users/New/OneDrive/bootcamp')
 from base.base_test import BaseTest
 from page.home_page import HomePage
 
