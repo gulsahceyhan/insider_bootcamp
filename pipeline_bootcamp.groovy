@@ -19,7 +19,7 @@ stages {
     stage('Set Pending Status') {
         steps {
             script {
-                sh 'echo "Pending"'
+                bat 'echo "Pending"'
             }
         }
     } 
@@ -29,11 +29,8 @@ stages {
             script {
                 dir('C:/Users/New/OneDrive/Masaüstü/bootcamp/test'){
                     echo 'Automation Process running...'
-                    sh 'pip install -r requirements.txt'
-                    sh 'pwd'
-
-                    // sh command
-                    // sleep(time:30, unit 'SECONDS')
+                    bat 'pip install -r requirements.txt'
+                    bat 'pwd'
                 }
             }
         }
@@ -43,12 +40,12 @@ stages {
 post{
     success{
         script{
-            sh 'echo "Automation process completed succesfully"'
+            bat 'echo "Automation process completed succesfully"'
         }
     }
     failure{
         script{
-            sh 'echo "Automation process failed"'
+            bat 'echo "Automation process failed"'
         }
     }
 }
