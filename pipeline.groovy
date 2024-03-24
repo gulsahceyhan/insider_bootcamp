@@ -1,39 +1,54 @@
 pipeline {
     agent any
+    environment {
+        // DEVELOPER BRANCH 'develop' 
+        BRANCH = "${BRANCH_NAME}"
+        // ANSIBLE FORCE_COLOR= 'true'
+}
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from your repository
-                git 'https://github.com/gulsahceyhan/insider_bootcamp.git'
+stages {
+    stage('Get Branch Name') {
+        steps {
+            script {
+                branch = env.BRANCH
             }
         }
-        stage('Install dependencies') {
-            steps {
-                // Assuming you use pip for Python dependency management
-                sh 'pip install -r requirements.txt' // If you have requirements.txt file
-                // Or install dependencies using any other method if applicable
+    }
+
+
+    stage('Set Pending Status') {
+        steps {
+            script {
+                bat 'echo "Pending"'
             }
         }
-        stage('Run tests') {
-            steps {
-                // Navigate to the test directory
-                dir('test') {
-                    // Run your test script
-                    sh 'python tester.py'
+    } 
+
+    stage("Automation Precess") {
+        steps {
+            script {
+                dir('C:/Users/New/OneDrive/bootcamp/test'){
+                    echo 'Automation Process running...'
+                    bat 'pip install -r requirements.txt'
+                    echo 'requirements installed'
+                    bat 'python3 tester.py'
                 }
             }
         }
-    }
-    post {
-        always {
-            // Cleanup steps if necessary
-        }
-        success {
-            echo 'Tests passed successfully!'
-        }
-        failure {
-            echo 'Tests failed!'
+    } 
+}
+
+post{
+    success{
+        script{
+            bat 'echo "Automation process completed succesfully"'
         }
     }
+    failure{
+        script{
+            bat 'echo "Automation process failed"'
+        }
+    }
+}
+
 }
