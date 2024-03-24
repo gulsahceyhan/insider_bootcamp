@@ -3,7 +3,7 @@ pipeline {
     environment {
         // DEVELOPER BRANCH 'develop' 
         BRANCH = "${BRANCH_NAME}"
-        ANSIBLE FORCE_COLOR= 'true'
+        // ANSIBLE FORCE_COLOR= 'true'
 }
 
 stages {
