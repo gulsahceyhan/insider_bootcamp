@@ -31,7 +31,7 @@ stages {
                     echo 'Automation Process running...'
                     bat 'pip install -r requirements.txt'
                     echo 'requirements installed'
-                    bat 'python3 tester.py'
+                    bat 'python tester.py'
                 }
             }
         }
