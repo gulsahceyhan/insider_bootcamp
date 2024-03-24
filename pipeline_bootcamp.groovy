@@ -41,12 +41,12 @@ stages {
 }
 
 post{
-    succes{
+    success{
         script{
             sh 'echo "Automation process completed succesfully"'
         }
     }
-    failre{
+    failure{
         script{
             sh 'echo "Automation process failed"'
         }
