@@ -32,8 +32,8 @@ stages {
                     sh 'pip install -r requirements.txt'
                     sh 'pwd'
 
-                    sh command
-                    sleep(time:30, unit 'SECONDS')
+                    // sh command
+                    // sleep(time:30, unit 'SECONDS')
                 }
             }
         }
